@@ -1,0 +1,82 @@
+/* ==========================================================================
+   layout.css —— 左右分区结构、粘性侧栏、响应式布局
+   ========================================================================== */
+
+/* 桌面端：左侧固定窄栏 + 右侧主内容区 */
+.layout {
+  display: grid;
+  grid-template-columns: var(--side-width) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--bg-side);
+  color: var(--text-side);
+}
+
+.sidebar__inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 52px 34px 36px;
+}
+
+.main {
+  padding: 96px clamp(28px, 5.5vw, 88px) 140px;
+}
+
+.section {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  scroll-margin-top: 24px;
+}
+
+.section + .section {
+  margin-block-start: clamp(80px, 10vw, 140px);
+}
+
+/* 中等屏幕：收窄侧栏 */
+@media (max-width: 1100px) {
+  :root {
+    --side-width: 296px;
+    --content-max: 880px;
+  }
+
+  .sidebar__inner {
+    padding: 42px 26px 30px;
+  }
+
+  .main {
+    padding: 72px 40px 110px;
+  }
+}
+
+/* 移动端：上下布局，侧栏折叠为顶部区域 */
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  .sidebar__inner {
+    min-height: 0;
+    padding: 34px 22px 28px;
+  }
+
+  .main {
+    padding: 44px 22px 88px;
+  }
+
+  .section + .section {
+    margin-block-start: 76px;
+  }
+}

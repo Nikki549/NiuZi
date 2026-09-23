@@ -1,0 +1,100 @@
+/* ==========================================================================
+   base.css —— 设计变量、重置样式、基础排版
+   ========================================================================== */
+
+:root {
+  /* 颜色 */
+  --accent: #ff5a2b;
+  --accent-soft: rgba(255, 90, 43, 0.14);
+  --accent-line: rgba(255, 90, 43, 0.42);
+
+  --bg-main: #f6f5f2;
+  --bg-side: #121317;
+  --bg-elevated: #ffffff;
+
+  --text-main: #1b1c1f;
+  --text-muted: #6b6f76;
+  --text-side: #ecedef;
+  --text-side-muted: #8d939c;
+
+  --line: rgba(27, 28, 31, 0.13);
+  --line-side: rgba(255, 255, 255, 0.1);
+
+  /* 尺寸与结构 */
+  --side-width: 340px;
+  --content-max: 1040px;
+  --radius: 6px;
+
+  /* 字体 */
+  --font-sans: "Inter", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* 尊重系统的“减少动态效果”设置 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

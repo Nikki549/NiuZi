@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="个人作品集：个人介绍、技能方向与项目作品展示。">
+  <title>小和 · 个人作品集</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- 左侧：个人介绍、技能、导航（桌面端固定，移动端折叠为顶部区域） -->
+    <aside class="sidebar">
+      <div class="sidebar__inner">
+        <div class="profile">
+          <img class="profile__avatar" id="avatar" src="" alt="个人头像">
+          <div class="profile__head">
+            <h1 class="profile__name" id="profile-name"></h1>
+            <p class="profile__role" id="profile-role"></p>
+          </div>
+        </div>
+        <p class="profile__bio" id="profile-bio"></p>
+        <p class="profile__status" id="profile-status"></p>
+
+        <nav class="sidebar__nav" aria-label="页面导航">
+          <a class="nav__link is-active" href="#work">项目作品</a>
+          <a class="nav__link" href="#about">关于我</a>
+          <a class="nav__link" href="#contact">联系方式</a>
+        </nav>
+
+        <div class="sidebar__skills">
+          <h2 class="sidebar__heading">技能方向</h2>
+          <div id="skill-groups"></div>
+        </div>
+
+        <div class="sidebar__footer">
+          <a class="sidebar__email" id="sidebar-email" href=""></a>
+          <p class="sidebar__tip">欢迎通过邮件或 GitHub 联系我</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 右侧：项目作品 + 关于我 + 联系方式 -->
+    <main class="main">
+      <section class="section" id="work">
+        <header class="section__head reveal">
+          <p class="section__eyebrow">Selected Work</p>
+          <h2 class="section__title">项目作品</h2>
+          <p class="section__desc">以下是我在课程学习与自主实践中完成的项目，涵盖微信小程序、Web 应用、数据可视化与 AI 应用等方向。</p>
+        </header>
+        <div class="project-list" id="project-list"></div>
+      </section>
+
+      <section class="section" id="about">
+        <header class="section__head reveal">
+          <p class="section__eyebrow">About Me</p>
+          <h2 class="section__title">关于我</h2>
+        </header>
+        <div class="about">
+          <div class="about__text reveal">
+            <p>我叫小和，是一名软件工程专业学生，目前主要关注 AI 辅助开发与大语言模型技术。</p>
+            <p>平时主要使用 Python、Java 和 TypeScript 进行项目开发，也在持续学习前后端开发、数据可视化和 AI 应用构建。</p>
+          </div>
+          <div class="about__panel reveal">
+            <div class="about__item">
+              <h3 class="about__item-title">教育背景</h3>
+              <p class="about__item-value">广州软件学院 · 软件工程</p>
+              <p class="about__item-desc">在读</p>
+            </div>
+            <div class="about__item">
+              <h3 class="about__item-title">当前方向</h3>
+              <p class="about__item-value">AI 辅助开发 · 大语言模型应用</p>
+            </div>
+            <div class="about__item">
+              <h3 class="about__item-title">所在地</h3>
+              <p class="about__item-value">中国 · 广州</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <header class="section__head reveal">
+          <p class="section__eyebrow">Contact</p>
+          <h2 class="section__title">联系方式</h2>
+          <p class="section__desc">欢迎通过以下方式与我联系。</p>
+        </header>
+        <div class="contact" id="contact-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
