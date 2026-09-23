@@ -8,12 +8,26 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
+  <!-- 提前同步执行：在首次渲染前确定主题，避免刷新时闪白 -->
+  <script src="js/theme.js"></script>
 </head>
 <body>
   <div class="layout">
     <!-- 左侧：个人介绍、技能、导航（桌面端固定，移动端折叠为顶部区域） -->
     <aside class="sidebar">
       <div class="sidebar__inner">
+        <div class="sidebar__top">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换到深色主题" aria-pressed="false">
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M20.2 14.6A8.6 8.6 0 0 1 9.4 3.8a8.6 8.6 0 1 0 10.8 10.8z"></path>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4.1"></circle>
+              <path d="M12 2.8v2.3M12 18.9v2.3M2.8 12h2.3M18.9 12h2.3M5.5 5.5l1.6 1.6M16.9 16.9l1.6 1.6M18.5 5.5l-1.6 1.6M7.1 16.9l-1.6 1.6"></path>
+            </svg>
+          </button>
+        </div>
+
         <div class="profile">
           <img class="profile__avatar" id="avatar" src="" alt="个人头像">
           <div class="profile__head">

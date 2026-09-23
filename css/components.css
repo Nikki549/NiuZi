@@ -3,6 +3,57 @@
    ========================================================================== */
 
 /* ------------------------------ 左侧：个人信息 ------------------------------ */
+/* 顶部一行的主题切换按钮（右对齐） */
+.sidebar__top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line-side);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-side-muted);
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+}
+
+.theme-toggle__icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* 浅色主题显示月亮（点击切到深色），深色主题显示太阳 */
+.theme-toggle__icon--sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__icon--moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__icon--sun {
+  display: block;
+}
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -246,7 +297,7 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
-  background: #e6e4df;
+  background: var(--bg-media);
   aspect-ratio: 4 / 3;
 }
 

@@ -3,6 +3,8 @@
    ========================================================================== */
 
 :root {
+  color-scheme: light;
+
   /* 颜色 */
   --accent: #ff5a2b;
   --accent-soft: rgba(255, 90, 43, 0.14);
@@ -11,6 +13,7 @@
   --bg-main: #f6f5f2;
   --bg-side: #121317;
   --bg-elevated: #ffffff;
+  --bg-media: #e6e4df;
 
   --text-main: #1b1c1f;
   --text-muted: #6b6f76;
@@ -29,6 +32,26 @@
   --font-sans: "Inter", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
+
+/* 深色主题：由 js/theme.js 在 <html> 上设置 data-theme 切换 */
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --accent: #ff6a3d;
+  --accent-soft: rgba(255, 106, 61, 0.16);
+  --accent-line: rgba(255, 106, 61, 0.46);
+
+  --bg-main: #0e0f12;
+  --bg-side: #17181d;
+  --bg-elevated: #1c1e24;
+  --bg-media: #1e2027;
+
+  --text-main: #ecedef;
+  --text-muted: #a3a9b3;
+
+  --line: rgba(255, 255, 255, 0.14);
+}
+
 
 *,
 *::before,
@@ -50,6 +73,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
